@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SelectionSortRecursivo {
+class SelectionSortRecursivo {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
@@ -16,7 +16,6 @@ public class SelectionSortRecursivo {
 	
 	private static void selectionSortRecursivo(int[] v, int i) {
 		int iMenor = i;
-		boolean houveTroca = false;
 		for(int j = i+1; j < v.length; j++) {
 			if(v[j] < v[iMenor]) {
 				iMenor = j;
