@@ -27,6 +27,8 @@ class SelectionSortPassoAPasso {
 				v[i] = v[iMenor];
 				v[iMenor] = aux;
 				System.out.println(Arrays.toString(v));				
+			}else {
+				return;
 			}
 		}
 		
