@@ -3,6 +3,10 @@
 	<classpathentry kind="src" path="PotenciaRecursiva"/>
 	<classpathentry kind="src" path="BuscaBinaraRecursiva"/>
 	<classpathentry kind="src" path="BuscaLinearRecursiva"/>
+	<classpathentry kind="src" path="InsereUltimo"/>
+	<classpathentry kind="src" path="SelectionSortRecursivo"/>
+	<classpathentry kind="src" path="SelectionSortPassoAPasso"/>
+	<classpathentry kind="src" path="MarianaEOsLivros"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
