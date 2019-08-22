@@ -8,6 +8,7 @@
 	<classpathentry kind="src" path="SelectionSortPassoAPasso"/>
 	<classpathentry kind="src" path="MarianaEOsLivros"/>
 	<classpathentry kind="src" path="InsertionSortRecursivo"/>
+	<classpathentry kind="src" path="VerificaçãoDeElementosDuplicados"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
