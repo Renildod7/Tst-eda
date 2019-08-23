@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class VerificaçãoDeElementosDuplicados {
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
@@ -10,7 +11,7 @@ class VerificaçãoDeElementosDuplicados {
 		
 	}
 	
-	private static boolean duplicados(int[] v) {
+	public static boolean duplicados(int[] v) {
 		boolean retorno = false;
 		int i = 0;
 		while(i < v.length && retorno == false) {
