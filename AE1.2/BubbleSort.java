@@ -21,8 +21,7 @@ public class BubbleSort {
 					v[j] = aux;
 				}
 			}
-		}
-		
+		}	
 	}
 
 	private static int[] toArrayInt(String[] sec) {
