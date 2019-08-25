@@ -9,6 +9,10 @@
 	<classpathentry kind="src" path="MarianaEOsLivros"/>
 	<classpathentry kind="src" path="InsertionSortRecursivo"/>
 	<classpathentry kind="src" path="VerificaçãoDeElementosDuplicados"/>
+	<classpathentry kind="src" path="TrocaVizinhos"/>
+	<classpathentry kind="src" path="AE1.2"/>
+	<classpathentry kind="src" path="SomaDois"/>
+	<classpathentry kind="src" path="VetorCircular"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

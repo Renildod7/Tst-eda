@@ -1,31 +1,28 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
-class VerificaçãoDeElementosDuplicados {
-	
+public class BubbleSort {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
 		int[] numSec = toArrayInt(sec);
-		System.out.println(duplicados(numSec));
-		sc.close();
-		
+		bobbleSort(numSec);
+		System.out.println(Arrays.toString(numSec));
+		sc.close();	
 	}
 	
-	public static boolean duplicados(int[] v) {
-		boolean duplicado = false;
-		int i = 0;
-		while(i < v.length && !duplicado) {
-			int j = i +1;
-			while(j < v.length && !duplicado) {
-				if(v[i] == v[j]) {
-					duplicado = true;
-				}else {
-					j++;
+	private static void bobbleSort(int[] v) {
+		
+		for(int i = 0; i < v.length - 1; i++) {
+			for(int j = i+1; j < v.length; j++) {
+				if(v[i] > v[j]) {
+					int aux = v[i];
+					v[i] = v[j];
+					v[j] = aux;
 				}
 			}
-			i++;
 		}
-		return duplicado;
+		
 	}
 
 	private static int[] toArrayInt(String[] sec) {
