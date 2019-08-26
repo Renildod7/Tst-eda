@@ -6,7 +6,7 @@ public class BubbleSort {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
 		int[] numSec = toArrayInt(sec);
-		bobbleSort(numSec);
+		bobbleSort(numSec, 2 , numSec.length -3);
 		System.out.println(Arrays.toString(numSec));
 		sc.close();	
 	}
@@ -31,4 +31,18 @@ public class BubbleSort {
 		}
 		return numSec;
 	}
+	
+	private static void bobbleSort(int[] v, int esquerda, int direita) {
+		
+		for(int i = esquerda; i < direita; i++) {
+			for(int j = i+1; j < direita +1; j++) {
+				if(v[i] > v[j]) {
+					int aux = v[i];
+					v[i] = v[j];
+					v[j] = aux;
+				}
+			}
+		}	
+	}
+	
 }

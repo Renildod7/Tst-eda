@@ -7,7 +7,7 @@ class SelectionSortPassoAPasso {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
 		int[] numSec = toArrayInt(sec);
-		selectionSortPassoAPasso(numSec);
+		selectionSortPassoAPasso(numSec, 2, numSec.length -3);
 		sc.close();
 	}
 	
@@ -39,5 +39,27 @@ class SelectionSortPassoAPasso {
 			numSec[i] = Integer.parseInt(sec[i]);
 		}
 		return numSec;
+	}
+	
+	private static void selectionSortPassoAPasso(int[] v , int esquerda, int direita) {
+		for(int i = esquerda; i < direita; i++) {
+			int iMenor = i;
+			boolean houveTroca = false;
+			for(int j = i+1; j < direita +1; j++) {
+				if(v[j] < v[iMenor]) {
+					iMenor = j;
+					houveTroca = true;
+					
+				}
+			}
+			if(houveTroca) {
+				int aux = v[i];
+				v[i] = v[iMenor];
+				v[iMenor] = aux;
+				
+				System.out.println(Arrays.toString(v));				
+			}
+		}
+		
 	}
 }
