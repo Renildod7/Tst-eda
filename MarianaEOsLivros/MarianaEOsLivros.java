@@ -7,6 +7,7 @@ class MarianaEOsLivros {
 		String[] estante = sc.nextLine().split(",");
 		insertionSort(estante);
 		sc.close();
+		System.out.println("a".compareTo("z"));
 		
 	}
 
