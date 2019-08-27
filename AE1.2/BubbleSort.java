@@ -14,10 +14,10 @@ public class BubbleSort {
 	private static void bobbleSort(int[] v) {
 		
 		for(int i = 0; i < v.length - 1; i++) {
-			for(int j = i+1; j < v.length; j++) {
-				if(v[i] > v[j]) {
-					int aux = v[i];
-					v[i] = v[j];
+			for(int j = 0; j < v.length; j++) {
+				if(v[j] > v[j+1]) {
+					int aux = v[j+1];
+					v[i+1] = v[j];
 					v[j] = aux;
 				}
 			}
