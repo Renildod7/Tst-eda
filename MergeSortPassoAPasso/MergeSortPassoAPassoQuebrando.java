@@ -1,18 +1,17 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-class MergeSortPassoAPasso {
+public class MergeSortPassoAPassoQuebrando {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
 		int[] numSec = toArrayInt(sec);
 		sc.close();
 		mergeSort(numSec);
-		System.out.println(Arrays.toString(numSec));
 	}
 	
 	public static void mergeSort(int[] v) {
-		mergeSort(v, 2, v.length - 3);
+		mergeSort(v, 0, v.length - 1);
 	}
 	
 	private static void mergeSort(int[] v, int inicio, int fim) {
@@ -20,49 +19,53 @@ class MergeSortPassoAPasso {
 		if(inicio < fim) {
 			int meio = (inicio + fim) / 2;
 			
-			mergeSort(v, inicio, meio);
-			mergeSort(v, meio+1, fim);
-			merge(v, inicio, fim, meio);
-		}		
-		
-		
+			int[] a = new int[meio - inicio +1];
+			int[] b = new int[fim - meio];
+			
+			for(int i = 0; i < a.length; i++) {
+				a[i] = v[inicio +i];
+			}
+			
+			for(int j = 0; j < b.length; j++) {
+				b[j] = v[meio + 1 + j];
+			}
+			
+			mergeSort(a, 0, a.length-1);
+			mergeSort(b, 0, b.length-1);
+			merge(v, a, b);
+			
+		}	
 	}
 	
-	private static void merge(int[] v, int inicio, int fim, int meio) {
+	private static void merge(int[] v, int[] a, int[] b) {
 		
-		int[] copy = new int[v.length];
+		int i = 0;
+		int j = 0;
+		int k = 0;
 		
-		for(int i = 0; i < v.length; i++) {
-			copy[i] = v[i];
-		}
-		
-		
-		int i = inicio;
-		int j = meio+1;
-		int k = inicio;
-		
-		while(i <= meio && j <= fim) {
-			if(copy[i] < copy[j]) {
-				v[k] = copy[i];
+		while(i < a.length && j < b.length) {
+			if(a[i] < b[j]) {
+				v[k] = a[i];
 				i++;
 			}else {
-				v[k] = copy[j];
+				v[k] = b[j];
 				j++;
 			}
 			k++;
 		}
 		
-		while(i <= meio) {
-			v[k] = copy[i];
+		while(i < a.length) {
+			v[k] = a[i];
 			i++;
 			k++;
 		}
 		
-		while(j <= fim) {
-			v[k] = copy[j];
+		while(j < b.length) {
+			v[k] = b[j];
 			j++;
 			k++;
 		}
+		System.out.println(Arrays.toString(v));
 	}
 
 	private static int[] toArrayInt(String[] sec) {
@@ -72,4 +75,6 @@ class MergeSortPassoAPasso {
 		}
 		return numSec;
 	}
+
+
 }
