@@ -1,14 +1,13 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class QuickSortPassoAPasso {
+class QuickSortPassoAPasso {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
 		int[] numSec = toArrayInt(sec);
 		sc.close();
 		quickSort(numSec);
-		System.out.println(Arrays.toString(numSec));
 	}
 	
 	public static void quickSort(int[] v) {
@@ -37,7 +36,15 @@ public class QuickSortPassoAPasso {
 		}
 		swap(v, inicio, a-1);
 		
-		
+		String saida = "";
+		for(int i = 0; i<v.length; i++) {
+			if(i == v.length-1) {
+				saida+= v[i];
+			}else {
+				saida+= v[i]+" ";
+			}
+		}
+		System.out.println(saida);
 		return a-1;
 	}
 
