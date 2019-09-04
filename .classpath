@@ -15,6 +15,9 @@
 	<classpathentry kind="src" path="VetorCircular"/>
 	<classpathentry kind="src" path="MergeSortPassoAPasso"/>
 	<classpathentry kind="src" path="QuickSortPassoAPasso"/>
+	<classpathentry kind="src" path="ParticionamentoLomuto"/>
+	<classpathentry kind="src" path="CountingSortPassoAPasso"/>
+	<classpathentry kind="src" path="CalculoDeEstatisticaDeOrdem"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
