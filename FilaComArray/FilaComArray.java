@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
+
 public class FilaComArray {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] entrada = sc.nextLine().split(" ");
-		Fila fila = new Fila();
+		Fila fila = new Fila(3);
 		
 		while(!entrada[0].equals("end")) {
 			
@@ -28,7 +29,7 @@ public class FilaComArray {
 				
 			case "element":
 				if(!fila.isEmpty()) {
-					System.out.println(fila.element());
+					//System.out.println(fila.element());
 				} else {
 					System.out.println("empty");
 				}
@@ -36,7 +37,7 @@ public class FilaComArray {
 				
 			case "search":
 				int search = Integer.parseInt(entrada[1]);
-				System.out.println(fila.search(search));
+				//System.out.println(fila.search(search));
 				break;
 				
 			case "print":
@@ -97,6 +98,28 @@ class Fila {
 			}
 			this.size++;
 		}
+	}
+	
+	public void remove() {
+		if(!isEmpty()) {
+			this.head = (this.head+1) % this.array.length;
+			this.size--;
+		}
+	}
+	
+	public String print() {
+		String retorno = "";
+		
+		if(!isEmpty()) {
+			int i;
+			
+			for(i = this.head % this.array.length ; i < this.tail % this.array.length; i++) {
+				retorno += this.array[i] + " ";
+			}
+			retorno += this.array[i];
+		}
+		return retorno;
+	
 	}
 	
 	
