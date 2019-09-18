@@ -18,6 +18,8 @@
 	<classpathentry kind="src" path="ParticionamentoLomuto"/>
 	<classpathentry kind="src" path="CountingSortPassoAPasso"/>
 	<classpathentry kind="src" path="CalculoDeEstatisticaDeOrdem"/>
+	<classpathentry kind="src" path="Fila(LinkedList)"/>
+	<classpathentry kind="src" path="FilaComArray"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
