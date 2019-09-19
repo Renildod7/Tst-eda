@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SomaDois {
+class SomaDois {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");

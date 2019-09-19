@@ -1,11 +1,14 @@
+
 import java.util.Scanner;
 
 
-public class FilaComArray {
+class FilaComArray {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		int tamanho = sc.nextInt();
+		sc.nextLine();
 		String[] entrada = sc.nextLine().split(" ");
-		Fila fila = new Fila(3);
+		Fila fila = new Fila(tamanho);
 		
 		while(!entrada[0].equals("end")) {
 			
@@ -29,7 +32,7 @@ public class FilaComArray {
 				
 			case "element":
 				if(!fila.isEmpty()) {
-					//System.out.println(fila.element());
+					System.out.println(fila.element());
 				} else {
 					System.out.println("empty");
 				}
@@ -37,7 +40,7 @@ public class FilaComArray {
 				
 			case "search":
 				int search = Integer.parseInt(entrada[1]);
-				//System.out.println(fila.search(search));
+				System.out.println(fila.search(search));
 				break;
 				
 			case "print":
@@ -71,6 +74,7 @@ class Fila {
 		this.tail = -1;
 	}
 	
+
 	public Fila(int tamanho) {
 		this.array = new int[tamanho];
 		this.head = -1;
@@ -94,7 +98,7 @@ class Fila {
 				this.tail++;
 			} else {
 				this.array[(tail+1) % array.length] = i;
-				this.tail++;
+				this.tail = (tail + 1) % array.length;
 			}
 			this.size++;
 		}
@@ -111,16 +115,42 @@ class Fila {
 		String retorno = "";
 		
 		if(!isEmpty()) {
-			int i;
 			
-			for(i = this.head % this.array.length ; i < this.tail % this.array.length; i++) {
+			for ( int i = this.head; i != this.tail; i = (i + 1) % this.array.length) {
 				retorno += this.array[i] + " ";
 			}
-			retorno += this.array[i];
+			retorno += this.array[this.tail];
 		}
 		return retorno;
 	
 	}
 	
+	public int element() {
+		return this.array[this.head];
+	}
+	
+	public int search(int num) {
+		int cont = -1;
+		boolean encontrou = false;
+		
+		if(!isEmpty()) {
+			
+			for (int i = this.head; i != this.tail && !encontrou; i = (i + 1) % this.array.length) {
+				cont++;
+				if(this.array[i] == num) {
+					encontrou = true;
+				}
+			}
+			if(this.array[this.tail] == num && !encontrou) {
+				encontrou = true;
+				cont++;
+			}	
+		}
+		if(encontrou) {
+			return cont;
+		}else {
+			return -1;
+		}
+	}
 	
 }
