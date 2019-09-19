@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class InvertePalavra {
@@ -10,8 +11,8 @@ class InvertePalavra {
 			
 			String entrada = sc.next();
 			pilha.push(entrada);
-			
-		} while(sc.hasNextShort());
+			System.out.println(Arrays.toString(entrada.chars()));
+		} while(sc.hasNext());
 
 		//System.out.println(pilha.print());
 		
