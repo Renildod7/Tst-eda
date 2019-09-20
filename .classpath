@@ -21,7 +21,8 @@
 	<classpathentry kind="src" path="Fila(LinkedList)"/>
 	<classpathentry kind="src" path="FilaComArray"/>
 	<classpathentry kind="src" path="PilhaComArray"/>
-	<classpathentry kind="src" path="InvertePalavra"/>
+	<classpathentry kind="src" path="InverteFrase"/>
+	<classpathentry kind="src" path="Parenteses"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
