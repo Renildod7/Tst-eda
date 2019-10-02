@@ -23,6 +23,8 @@
 	<classpathentry kind="src" path="PilhaComArray"/>
 	<classpathentry kind="src" path="InverteFrase"/>
 	<classpathentry kind="src" path="Parenteses"/>
+	<classpathentry kind="src" path="AE 23: Lista duplamente encadeada"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
