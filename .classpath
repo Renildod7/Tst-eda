@@ -25,7 +25,11 @@
 	<classpathentry kind="src" path="Parenteses"/>
 	<classpathentry kind="src" path="AE 23: Lista duplamente encadeada"/>
 	<classpathentry kind="src" path="HT Probing Linear"/>
+	<classpathentry kind="src" path="BuscaBST"/>
+	<classpathentry kind="src" path="AlturaBST"/>
+	<classpathentry kind="src" path="MaxBST"/>
+	<classpathentry kind="src" path="BSF"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
