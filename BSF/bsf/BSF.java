@@ -3,11 +3,12 @@ package bsf;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Stack;
+
+import sun.misc.Queue;
 
 public class BSF {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
 		String numeros = sc.nextLine();
 		sc.close();
@@ -16,8 +17,7 @@ public class BSF {
 		
 		for(String s: numeros.split(" ")) bst.add(Integer.parseInt(s));
 
-		
-		
+		bst.bfs();
 	}
 
 }
@@ -85,17 +85,31 @@ class BST{
 		
 	}
 	
-	public void bfs() {
+	public void bfs() throws InterruptedException {
 		if(isEmpty()) return;
 		ArrayList<Integer> list = new ArrayList<>();
 		Node aux = this.root;
-		Stack<Node> pilha = new Stack<>();
-		pilha.add(aux);
+		boolean root = true;
+		Queue<Node> fila = new Queue<>();
+		fila.enqueue(aux);
 		
-		while(!pilha.isEmpty()) {
+		while(!fila.isEmpty()) {
+			aux = fila.dequeue();
+
 			list.add(aux.getValue());
-			pilha.add(aux.)
+			
+			if(aux.getLeft() != null)fila.enqueue(aux.getLeft());
+			if(aux.getRigth() != null)fila.enqueue(aux.getRigth());
+
 		}
+		String s = "";
+
+		for(int i = 0; i < list.size()-1; i++) {
+			s += list.get(i) + " ";
+		}
+		s += list.get(list.size()-1);
+		
+		System.out.println(s);
 		
 	}
 	
@@ -111,8 +125,8 @@ class BST{
 		}
 		
 		String s = "";
-		int i;
-		for(i = 0; i < list.size()-1; i++) {
+
+		for(int i = 0; i < list.size()-1; i++) {
 			s += list.get(i) + " ";
 		}
 		s += list.get(list.size()-1);
