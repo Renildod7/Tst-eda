@@ -31,6 +31,7 @@
 	<classpathentry kind="src" path="BSF"/>
 	<classpathentry kind="src" path="IsHeap"/>
 	<classpathentry kind="src" path="ValorMaisProximoBST"/>
+	<classpathentry kind="src" path="ElementosMenoresBST"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>

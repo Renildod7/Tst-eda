@@ -1,10 +1,11 @@
-package vmpbst;
+package elementosmenoresbst;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ValorMaisProximoBST {
+
+public class ElementosMenoresBST {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String[] sec = sc.nextLine().split(" ");
@@ -14,12 +15,11 @@ public class ValorMaisProximoBST {
 		sc.close();
 
 		BST bst = new BST();
-		for (int i : numSec)
-			bst.add(i);
-
+		for (int i : numSec) bst.add(i);
+		
 		System.out.println(Arrays.toString(bst.preOrder()));
-		System.out.println(
-				bst.maisProximo(num));
+		System.out.println(bst.qtdMenores(num));
+
 	}
 
 	public static int[] toArrayInt(String[] sec) {
@@ -35,7 +35,6 @@ public class ValorMaisProximoBST {
 class BST {
 
 	private Node root;
-	private int size;
 
 	public void add(int value) {
 		if (isEmpty()) {
@@ -50,7 +49,6 @@ class BST {
 					if (aux.getLeft() == null) {
 						aux.setLeft(new Node(value));
 						adicionou = true;
-
 					} else {
 						aux = aux.getLeft();
 					}
@@ -59,17 +57,33 @@ class BST {
 					if (aux.getRight() == null) {
 						aux.setRigth(new Node(value));
 						adicionou = true;
-
 					} else {
 						aux = aux.getRight();
 					}
 				}
 			}
 
-			this.size++;
-
 		}
 
+	}
+
+	public int qtdMenores(int value) {
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		qtdMenores(this.root, list, value);
+		
+		return list.size();
+	}
+
+	private void qtdMenores(Node node, ArrayList<Integer> list, int value) {
+		if(node.getValue() < value) {
+			list.add(node.getValue());			
+		}
+		if (node.getLeft() != null)
+			qtdMenores(node.getLeft(), list, value);
+		if (node.getRight() != null)
+			qtdMenores(node.getRight(), list, value);
+		
 	}
 
 	public void buscar(int value) {
@@ -100,21 +114,7 @@ class BST {
 		System.out.println(Arrays.toString(retorno.toArray()));
 
 	}
-
-	public int altura() {
-		return altura(this.root);
-	}
-
-	private int altura(Node node) {
-		if (node == null)
-			return -1;
-		return 1 + Math.max(altura(node.getLeft()), altura(node.getRight()));
-	}
-
-	public boolean isEmpty() {
-		return this.root == null;
-	}
-
+	
 	public Object[] preOrder() {
 		ArrayList<Integer> list = new ArrayList<>();
 		preOrder(list, this.root);
@@ -135,38 +135,20 @@ class BST {
 
 	}
 
-	public int distancia(int i, int j) {
-		return Math.abs(i - j);
+	public int altura() {
+		return altura(this.root);
 	}
 
-	public int maisProximo(int value) {
-		Node aux = this.root;
-		
-		int distanciaAtual = distancia(aux.getValue(), value);
-		int maisProximo = this.root.getValue();
-		
-		
-		while(aux != null) {
-			if(distanciaAtual == 0) {
-				break;
-			}
-			
-			if(distancia(aux.getLeft().getValue(), value) < distanciaAtual) {
-				aux = aux.getLeft();
-				distanciaAtual = distancia(aux.getLeft().getValue(), value);
-				maisProximo = aux.getLeft().getValue();
-			
-			} else if(distancia(aux.getRight().getValue(), value) < distanciaAtual) {
-				aux = aux.getLeft();
-				distanciaAtual = distancia(aux.getRight().getValue(), value);
-				maisProximo = aux.getRight().getValue();
-			} else {
-				break;
-			}
-		}
-		
-		return maisProximo;
+	private int altura(Node node) {
+		if (node == null)
+			return -1;
+		return 1 + Math.max(altura(node.getLeft()), altura(node.getRight()));
 	}
+
+	public boolean isEmpty() {
+		return this.root == null;
+	}
+
 }
 
 class Node {
@@ -176,6 +158,13 @@ class Node {
 
 	public Node(int value) {
 		this.value = value;
+	}
+
+	public void a() {
+		System.out.println(value);
+		if (this.left != null)
+			this.left.a();
+
 	}
 
 	public int getValue() {
@@ -201,5 +190,4 @@ class Node {
 	public boolean ehFolha() {
 		return (this.left == null && this.rigth == null);
 	}
-
 }
